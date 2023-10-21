@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <!--Tab title-->
+        <title>My Medition Music</title>
+        <!--This is the CSS Style section-->
+        <style>
+            /*Style the body*/
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: peru;
+                background-image: url('clouds.jpg');
+            }
+
+            .default { cursor: default; }
+
+            /*Style the player container*/
+            #player {
+                background-color: blanchedalmond;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0.1);
+            }
+
+            /*Style the audio controls (buttons)*/
+            button {
+                margin: 5px;
+                padding: 10px 15px;
+                border: none;
+                border-radius: 5px;
+                background-color: beige;
+                color: burlywood;
+                cursor: pointer;
+            }
+
+        </style>
+    </head>
+    <body>
+        <!--This is the HTML section-->
+        <!--This is the heading like titles for our page-->
+        <h1>My Medition Music</h1>
+        <p>Medition Music</p>
+        <!--This is the player container-->
+        <div id="player">
+            <audio id="audio" src="Meditation Music.mp3"></audio>
+            <!-- This is the audio controls (buttons)-->
+            <!--This makes the play button-->
+            <button onclick="playAudio()">Play</button>
+            <!--This makes the pause button on the page-->
+            <button onclick="pauseAudio()">Pause</button>
+            <!--This makes the skip button on the page-->
+            <button onclick="fowardAudio()">Skip</Button>
+        </div>
+
+        <!--This is the JavaScript section-->
+        <script>
+            var audio = document.getElementById("audio");
+            // JavaScript function that plays the audio when the user raises this event by pressing the play button.
+            function playAudio() {
+                audio.play();
+            }
+            // JavaScript function that pauses the audio when the user raises this event by pressing the pause button.
+            function pauseAudio() {
+                audio.pause();
+            }
+            // JavaScript function that skips the audio 30 sec when the user raises this event by pressing the stop button.
+            function fowardAudio() { 
+                var player = document.getElementById('player');
+                audio.currentTime += 30.0; 
+            }
+        </script>
+
+    </body>
+</html>
